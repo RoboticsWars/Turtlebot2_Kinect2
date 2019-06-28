@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<robot name="cylinder_stack" xmlns:xacro="http://ros.org/wiki/xacro">
+    <xacro:macro name="twocylinder_stack" params="parent">
+        <joint name="left_cylinder_joint" type="fixed">
+            <origin xyz="-0.10053 0.150259 0.24" rpy="0 0 0"/>
+            <parent link="${parent}"/>
+            <child link="left_cylinder_link" />
+        </joint>
+        <link name="left_cylinder_link">
+            <visual>
+                <origin xyz="0 0 0.1" rpy="0 0 0"/>
+                <geometry>
+                    <cylinder length="0.2" radius="0.006" />
+                </geometry>
+                <material name="light_gray">
+                    <color rgba="0.8 0.8 0.8 1"/>
+                </material>
+            </visual>
+        </link>
+        <joint name="right_cylinder_joint" type="fixed">
+            <origin xyz="-0.10053 -0.150259  0.24" rpy="0 0 0"/>
+            <parent link="${parent}"/>
+            <child link="right_cylinder_link" />
+        </joint>
+        <link name="right_cylinder_link">
+            <visual>
+                <origin xyz="0 0 0.1" rpy="0 0 0"/>
+                <geometry>
+                    <cylinder length="0.2" radius="0.006" />
+                </geometry>
+                <material name="light_gray">
+                    <color rgba="0.8 0.8 0.8 1"/>
+                </material>
+            </visual>
+        </link>
+        <joint name="board_joint" type="fixed">
+            <origin xyz="-0.10053 0 0.442" rpy="0 0 0"/>
+            <parent link="${parent}"/>
+            <child link="board_link" />
+        </joint>
+        <link name="board_link">
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <geometry>
+                    <box size="0.058 0.337 0.004" />
+                </geometry>
+                <material name="wood">
+                    <color rgba="0.984375 0.89453125 0.80078125 1"/>
+                </material>
+            </visual>
+        </link>
+    </xacro:macro>
+</robot>

@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<robot name="kobuki_x" xmlns:xacro="http://ros.org/wiki/xacro">
+    <xacro:macro name="kobuki_x">
+        <link name="base_footprint"/>
+        <joint name="base_joint" type="fixed">
+            <origin xyz="0 0 0.045" rpy="0 0 0" />
+            <parent link="base_footprint"/>
+            <child link="base_link" />
+        </joint>
+        <link name="base_link">
+            <visual>
+                <origin xyz="0.0 0.0 0.0" rpy="1.57079633 0 -1.57079633"/>
+                <geometry>
+                    <mesh filename="package://kobuki_x_description/meshes/kobuki_x.stl" scale="0.001 0.001 0.001"/>
+                </geometry>
+                <material name="light_black">
+                    <color rgba="0.26171875 0.26171875 0.26171875 1.0"/>
+                </material>
+            </visual>
+        </link>
+    </xacro:macro>
+</robot>
