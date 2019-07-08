@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<robot name="circle_board" xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:macro name="circle_board_stack" params="parent">
+    <joint name="circle_board_joint" type="fixed">
+      <origin xyz="0 0 0.24" rpy="0 0 0"/>
+      <parent link="${parent}"/>
+      <child link="circle_board_link"/>
+    </joint>
+    <link name="circle_board_link"/>
+  </xacro:macro>
+</robot>

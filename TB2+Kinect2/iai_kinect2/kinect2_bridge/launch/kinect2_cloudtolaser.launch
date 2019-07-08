@@ -32,8 +32,8 @@
     <node pkg="nodelet" type="nodelet" name="p2l_nodelet" args="load pointcloud_to_laserscan/pointcloud_to_laserscan_nodelet /camera" output="screen">
       <remap from="cloud_in" to="/camera/qhd/points"/>
       <param name="~target_frame" value="base_footprint"/>
-      <param name="~angle_min" value="-1.04719755"/>
-      <param name="~angle_max" value="1.04719755"/>
+      <param name="~angle_min" value="-0.785398163"/>
+      <param name="~angle_max" value="0.785398163"/>
       <param name="~range_min" value="0.5"/>
       <param name="~range_max" value="8.0"/>
       <param name="~min_height" value="0.05"/>
