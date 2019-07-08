@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!--
+    - Base      : kobuki_x
+    - Stacks    : circle_board
+    - 3d Sensor : kinect2
+    - Arm       : Phantomx_pincher_turtlebot2i
+-->    
+<robot name="kobuki_x_robot" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find turtlebot_description)/urdf/turtlebot_common_library.urdf.xacro" />
+  <xacro:include filename="$(find kobuki_x_description)/urdf/kobuki_xs.urdf.xacro" />
+  <xacro:include filename="$(find kobuki_x_description)/urdf/stacks/circle_board.urdf.xacro"/>
+  <xacro:include filename="$(find kobuki_x_description)/urdf/sensors/kinect2_for_kobuki_xs.urdf.xacro"/>
+  <xacro:include filename="$(find turtlebot2i_description)/urdf/turtlebot_library.urdf.xacro" />
+  
+  <kobuki_xs/>
+  <circle_board_stack parent="base_link"/>
+  <sensor_kinect2  parent="circle_board_link"/>
+  <phantomx_pincher_arm parent="base_link" color="Red" gripper_color="Red">
+    <origin xyz="0.171247 0.0 0.2555"/>
+  </phantomx_pincher_arm>
+
+</robot>

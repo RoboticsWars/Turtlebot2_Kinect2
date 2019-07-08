@@ -1,5 +1,6 @@
 <?xml version="1.0" ?>
 <robot name="kobuki_xs" xmlns:xacro="http://ros.org/wiki/xacro">
+    <xacro:include filename="$(find turtlebot_description)/urdf/common_properties.urdf.xacro"/>
     <xacro:macro name="kobuki_xs">
         <link name="base_footprint"/>
         <joint name="base_joint" type="fixed">
@@ -18,5 +19,37 @@
                 </material>
             </visual>
         </link>
+        <joint name="front_caster_joint" type="fixed">
+            <origin xyz="0.145 0 -0.0175" rpy="0 0 0"/>
+            <parent link="base_link"/>
+            <child link="front_caster_link"/>
+        </joint>
+        <link name="front_caster_link">
+            <visual>
+                <origin xyz="0 0 0" rpy="1.57079633 0 0"/>
+                <geometry>
+                    <cylinder length="0.01" radius="0.0175"/>
+                </geometry>
+                <material name="light_black">
+                    <color rgba="0.26171875 0.26171875 0.26171875 1.0"/>
+                </material>
+            </visual>
+        </link>
+        <joint name="back_caster_joint" type="fixed">
+            <origin xyz="-0.145 0 -0.0175" rpy="0 0 0"/>
+            <parent link="base_link"/>
+            <child link="back_caster_link"/>
+        </joint>
+        <link name="back_caster_link">
+            <visual>
+                <origin xyz="0 0 0" rpy="1.57079633 0 0"/>
+                <geometry>
+                    <cylinder length="0.01" radius="0.0175"/>
+                </geometry>
+                <material name="light_black">
+                    <color rgba="0.26171875 0.26171875 0.26171875 1.0"/>
+                </material>
+            </visual>
+        </link>    
     </xacro:macro>
 </robot>
