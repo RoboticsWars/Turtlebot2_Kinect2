@@ -20,8 +20,8 @@
     <joint name="lidar_joint" type="fixed">
       <origin xyz="0 0 0.032" rpy="0 0 0"/>
       <parent link="lidar_mount_link"/>
-      <child link="laser_frame"/>
+      <child link="laser"/>
     </joint>
-    <link name="laser_frame"/>
+    <link name="laser"/>
   </xacro:macro>
 </robot>
