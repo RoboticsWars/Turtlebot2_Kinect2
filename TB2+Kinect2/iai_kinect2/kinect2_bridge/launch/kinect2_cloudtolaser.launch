@@ -29,15 +29,16 @@
     <include file="$(find kinect2_bridge)/launch/kinect2_bridge.launch"/>
 
     <!-- Run the depthimage_to_laserscan node -->
-    <node pkg="nodelet" type="nodelet" name="p2l_nodelet" args="load pointcloud_to_laserscan/pointcloud_to_laserscan_nodelet /camera" output="screen">
+    <node pkg="nodelet" type="nodelet" name="p2l_nodelet" args="load pointcloud_to_laserscan/pointcloud_to_laserscan_nodelet $(arg base_name)" output="screen">
       <remap from="cloud_in" to="/camera/qhd/points"/>
+      <remap from="scan" to="pointcloud_scan" />
       <param name="~target_frame" value="base_footprint"/>
       <param name="~angle_min" value="-0.785398163"/>
       <param name="~angle_max" value="0.785398163"/>
       <param name="~range_min" value="0.5"/>
       <param name="~range_max" value="8.0"/>
       <param name="~min_height" value="0.05"/>
-      <param name="~max_height" value="1.5"/>
+      <param name="~angle_increment" value="0.017453293"/>
     </node>
 
     <!-- static_transform_publisher x y z yaw pitch roll frame_id child_frame_id period_in_ms -->  
