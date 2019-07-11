@@ -38,6 +38,7 @@
       <param name="~range_min" value="0.5"/>
       <param name="~range_max" value="8.0"/>
       <param name="~min_height" value="0.05"/>
+      <param name="~max_height" value="1.5"/>
       <param name="~angle_increment" value="0.017453293"/>
     </node>
 
