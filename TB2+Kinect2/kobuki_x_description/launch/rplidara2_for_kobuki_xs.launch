@@ -7,7 +7,7 @@
     <param name="frame_id" value="laser"/>
     <param name="inverted" value="false"/>
     <param name="angle_compensate" value="true"/>
-  </name>
+  </node>
   <node pkg="laser_filters" type="scan_to_scan_filter_chain" name="rplidara2_range_filter">
     <rosparam command="load" file="$(find kobuki_x_description)/param/rplidara2_for_kobuki_xs_filter_config.yaml"/>
     <remap from="scan" to="raw_scan"/>

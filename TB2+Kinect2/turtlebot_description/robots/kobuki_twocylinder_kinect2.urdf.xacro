@@ -7,7 +7,7 @@
 <robot name="kobuki_x_robot" xmlns:xacro="http://ros.org/wiki/xacro">
 
   <xacro:include filename="$(find turtlebot_description)/urdf/turtlebot_common_library.urdf.xacro" />
-  <xacro:include filename="$(find kobuki_x_description)/urdf/base/kobuki_x.urdf.xacro" />
+  <xacro:include filename="$(find kobuki_x_description)/urdf/bases/kobuki_x.urdf.xacro" />
   <xacro:include filename="$(find kobuki_x_description)/urdf/stacks/twocylinder.urdf.xacro"/>
   <xacro:include filename="$(find kobuki_x_description)/urdf/sensors/kinect2_for_kobuki_x.urdf.xacro"/>
   

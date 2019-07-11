@@ -4,10 +4,10 @@
   <arg name="map_file" default="$(env TURTLEBOT_MAP_FILE)"/>
   <!--Bringups the base-->
   <include file="$(find turtlebot_bringup)/launch/minimal.launch">
-    <arg name="serial_port" value="$(arg kobuki_serial_port)"/>
+    <arg name="serialport" value="$(arg kobuki_serial_port)"/>
   </include>
   <!--Launch the rplidar A2-->
-  <include file="$(find kobuki_xs_description)/launch/rplidara2_for_kobuki_xs.launch">
+  <include file="$(find kobuki_x_description)/launch/rplidara2_for_kobuki_xs.launch">
     <arg name="rplidar_serial_port" value="$(arg rplidar_serial_port)"/>
   </include>
   <!--Launch the kinect2 and convert pointcloud to laser-->

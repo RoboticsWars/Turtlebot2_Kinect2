@@ -4,10 +4,10 @@
   <arg name="custom_gmapping_launch_file" default="$(find turtlebot_navigation)/launch/includes/gmapping/gmapping.launch.xml"/>
   <!--Bringups the base-->
   <include file="$(find turtlebot_bringup)/launch/minimal.launch">
-    <arg name="serial_port" value="$(arg kobuki_serial_port)"/>
+    <arg name="serialport" value="$(arg kobuki_serial_port)"/>
   </include>
   <!--Launch the rplidar A2-->
-  <include file="$(find kobuki_xs_description)/launch/rplidara2_for_kobuki_xs.launch">
+  <include file="$(find kobuki_x_description)/launch/rplidara2_for_kobuki_xs.launch">
     <arg name="rplidar_serial_port" value="$(arg rplidar_serial_port)"/>
   </include>
   <!-- Gmapping -->

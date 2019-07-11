@@ -11,7 +11,7 @@
             <visual>
                 <origin xyz="0.0 0.0 0.0" rpy="1.57079633 0 -1.57079633"/>
                 <geometry>
-                    <mesh filename="package://kobuki_x_description/meshes/kobuki_x.stl" scale="0.001 0.001 0.001"/>
+                    <mesh filename="package://kobuki_x_description/meshes/bases/kobuki_x.stl" scale="0.001 0.001 0.001"/>
                 </geometry>
                 <material name="light_black">
                     <color rgba="0.26171875 0.26171875 0.26171875 1.0"/>
