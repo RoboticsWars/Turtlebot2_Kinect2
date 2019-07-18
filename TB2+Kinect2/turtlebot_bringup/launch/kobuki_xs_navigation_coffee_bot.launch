@@ -1,0 +1,13 @@
+<launch>
+  <arg name="kobuki_serial_port" default="/dev/kobuki"/>
+  <arg name="rplidar_serial_port" default="/dev/rplidara2"/>
+  <arg name="map_file" default="$(env TURTLEBOT_MAP_FILE)"/>
+  <!--Bringups the base-->
+  <include file="$(find turtlebot_bringup)/launch/kobuki_xs_navigation.launch">
+    <arg name="kobuki_serial_port" value="$(arg kobuki_serial_port)"/>
+    <arg name="rplidar_serial_port" value="$(arg rplidar_serial_port)"/>
+    <arg name="map_file" value="$(arg map_file)"/>
+  </include>
+  <!-- Coffeebot -->
+  <node pkg="kobuki_x_description" type="coffee_bot_prototype.py" name="coffee_bot" output="screen" respawn="false"/>
+</launch>
