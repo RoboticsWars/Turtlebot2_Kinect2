@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+    - Base      : kobuki_x
+    - Stacks    : circle_board
+    - Sensor    : kinect2 & rplidar s1
+-->    
+<robot name="kobuki_x_robot" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find turtlebot_description)/urdf/turtlebot_common_library.urdf.xacro" />
+  <xacro:include filename="$(find kobuki_x_description)/urdf/bases/kobuki_xs.urdf.xacro" />
+  <xacro:include filename="$(find kobuki_x_description)/urdf/stacks/circle_board.urdf.xacro"/>
+  <xacro:include filename="$(find kobuki_x_description)/urdf/sensors/kinect2_for_kobuki_xs.urdf.xacro"/>
+  <xacro:include filename="$(find kobuki_x_description)/urdf/sensors/rplidar_s1_for_kobuki_xs.urdf.xacro"/>
+  
+  <kobuki_xs/>
+  <circle_board_stack parent="base_link"/>
+  <sensor_kinect2  parent="circle_board_link"/>
+  <sensor_rplidar_s1 parent="circle_board_link"/>
+</robot>
